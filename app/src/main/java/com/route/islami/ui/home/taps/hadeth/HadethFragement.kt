@@ -17,4 +17,11 @@ class HadethFragement : Fragment() {
         viewBinding = FragmentHadethBinding.inflate(inflater, container, false)
         return viewBinding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+    }
+
+
 }

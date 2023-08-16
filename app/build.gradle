@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace 'com.route.islami'
-    compileSdk 34
+    compileSdk 33
     buildFeatures {
         viewBinding true
     }
@@ -13,7 +13,7 @@ android {
     defaultConfig {
         applicationId "com.route.islami"
         minSdk 24
-        targetSdk 34
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -32,6 +32,13 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    sourceSets {
+        main {
+            assets {
+                srcDirs 'src\\main\\assets', 'src\\main\\assets\\2'
+            }
+        }
     }
 }
 
