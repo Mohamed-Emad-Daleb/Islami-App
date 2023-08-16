@@ -1,11 +1,14 @@
 package com.route.islami.ui.home.taps.quran
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.route.islami.databinding.FragmentQuranBinding
+import com.route.islami.ui.home.Constant
+import com.route.islami.ui.home.chapterDetails.ChapterDetailsActivity
 
 class QuranFragement : Fragment() {
     lateinit var viewBinding: FragmentQuranBinding
@@ -145,10 +148,17 @@ class QuranFragement : Fragment() {
         adapter = ChapterNameRecyclerAdapter(names)
         adapter.onItemClickListener = object : ChapterNameRecyclerAdapter.OnItemClickListener {
             override fun onItemClick(position: Int, name: String) {
-
+                startChapterDetailsScreen(position, name)
             }
         }
         viewBinding.recyclerView.adapter = adapter
+    }
+
+    private fun startChapterDetailsScreen(index: Int, name: String) {
+        val intent = Intent(context, ChapterDetailsActivity::class.java)
+        intent.putExtra(Constant.VAL_CHAPTER_INDEX, index + 1)
+        intent.putExtra(Constant.VAL_CHAPTER_NAME, name)
+        startActivity(intent)
     }
 
 }
