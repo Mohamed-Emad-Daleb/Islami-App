@@ -19,6 +19,9 @@
             android:name=".ui.home.chapterDetails.ChapterDetailsActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.home.hadethDetails.HadethDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
